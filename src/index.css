@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 @layer components{
+    
+
+    .filter-item {
+        @apply text-white bg-gray-800 hover:bg-gray-900 transition-opacity cursor-pointer  px-3 py-1 rounded-lg
+    } 
     .sidebar-item {
         @apply gap-9 my-1 px-4 py-2 pr-7 rounded-lg hover:bg-gray-800 w-full  hover:cursor-pointer  stroke-primary text-primary flex items-center
     }
@@ -11,7 +19,7 @@
         @apply hover:bg-slate-500 cursor-pointer w-9 h-9 px-2  transition-colors
     }
     .text-main-title {
-        @apply text-primary font-semibold text-xl
+        @apply text-primary font-semibold text-lg sm:text-sm max-w-[280px]
     }
 
     .text-recomment-title {
@@ -19,9 +27,9 @@
     }
 
     .text-sub-title {
-        @apply text-secondary text-md
+        @apply text-secondary  
     }
-
+f
     .scrollbar-hide::-webkit-scrollbar {
         display: none;
     }
@@ -32,3 +40,4 @@
         scrollbar-width: none;  /* Firefox */
     }
 }
+

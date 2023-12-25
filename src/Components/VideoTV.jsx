@@ -1,18 +1,18 @@
 import React from "react";
 import ReactPlayer from "react-player";
 
-const VideoTV = () => {
+const VideoTV = ({ videoID }) => {
   return (
-    <div className=" bg-red-200 w-40 ">
-      <h1>Video Player</h1>
+    <div className=" flex flex-1 justify-center   rounded-xl shadow-sm ">
       <ReactPlayer
         playing={true}
         controls={true}
         loop={true}
         light={true}
-        url="https://www.youtube.com/watch?v=FHTbsZEJspU&t=3552s"
+        width={460}
+        height={260}
+        url={`https://www.youtube.com/watch?v=${videoID}`}
       />
-      ;
     </div>
   );
 };

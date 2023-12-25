@@ -1,10 +1,12 @@
 import React from "react";
 import VideoTV from "../Components/VideoTV";
+import VideoTitle from "../Components/VideoTitle";
 
 const VideoPage = () => {
   return (
-    <div className=" px-3 sm:px-6 md:px-9 xl:px-28 mt-8">
+    <div className="  justify-center items-center mt-8">
       <VideoTV />
+      <VideoTitle />
     </div>
   );
 };

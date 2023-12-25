@@ -2,9 +2,7 @@ import { List } from "lucide-react";
 import React from "react";
 import { useEffect, useState } from "react";
 
-export default async function APIFetch() {
-  const url =
-    "https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=RDZiQo7nAkQHU&part=snippet&maxResults=50";
+export default async function APIFetch(url) {
   const options = {
     method: "GET",
     headers: {
