@@ -8,7 +8,7 @@
 @layer components{
     
     .button-style{
-        @apply  text-white text-sm px-4 h-fit py-2 justify-center bg-gray-700 opacity-90 hover:bg-gray-800 transition-all 
+        @apply  text-white text-sm px-4  h-fit py-2 justify-center bg-gray-700 opacity-90 hover:bg-gray-800 transition-all 
     }
     .filter-item {
         @apply text-white bg-gray-800 hover:bg-gray-900 transition-opacity cursor-pointer  px-3 py-1 rounded-lg
@@ -32,7 +32,14 @@
     .text-sub-title {
         @apply text-secondary  
     }
-f
+
+    .text-suggested-title {
+        @apply text-white text-sm font-semibold
+    }
+
+    .text-suggested-sub-title {
+        @apply  text-secondary text-sm   
+    }
     .scrollbar-hide::-webkit-scrollbar {
         display: none;
     }

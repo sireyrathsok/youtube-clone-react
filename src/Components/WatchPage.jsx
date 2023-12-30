@@ -3,21 +3,24 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import VideoTV from "./VideoTV";
 import APIFetch from "../api/APIFetch";
+import RatingSec from "./RatingSec";
 import {
-  AlarmCheck,
   ArrowDown,
   Bell,
-  BellDot,
+  Clipboard,
+  Download,
   Music,
+  Share,
+  ThumbsDown,
   ThumbsUp,
   User,
-  UserCheck,
 } from "lucide-react";
 
 function WatchPage() {
   const { videoID } = useParams();
   const [data, setData] = useState([]);
   const [sub, setSub] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,31 +36,33 @@ function WatchPage() {
   }, []);
 
   return (
-    <div className="  h-screen overflow-auto scrollbar-hide ">
+    <div className=" lg:flex xl:mx-24   h-screen overflow-auto scrollbar-hide mt-7 pb-20 ">
       {data.map((item) => {
         return item.snippet.resourceId.videoId === videoID ? (
-          <div className=" px-5 " key={item.snippet.id}>
+          <div className=" px-5 w-fit   " key={item.snippet.id}>
             <VideoTV videoID={item.snippet.resourceId.videoId} />
             <div className=" mt-4">
-              <p className="text-main-title max-w-none">{item.snippet.title}</p>
-              <div className=" mt-4 ">
-                <div className=" flex gap-16 items-center">
+              <p className="text-main-title sm:text-xl max-w-none  ">
+                {item.snippet.title}
+              </p>
+              <div className=" mt-8   ">
+                <div className=" flex gap-16 sm:gap-4 md:gap-6 lg:gap-4 items-center">
                   <div className=" flex gap-3 items-center">
                     <User
                       width={40}
                       height={40}
                       className=" text-white rounded-full bg-gray-500 "
                     />
-                    <div>
+                    <div className="  ">
                       <p className="text-main-title">
                         {item.snippet.videoOwnerChannelTitle}
                       </p>
-                      <p className="text-sub-title">
+                      <p className="text-sub-title ">
                         93k <span>subscribers</span>
                       </p>
                     </div>
                   </div>
-                  <div className="button-style bg-button flex gap-2  rounded-lg">
+                  <div className="button-style bg-button flex gap-2 lg:ml-9  rounded-lg">
                     {sub ? (
                       <button className=" px-2 " onClick={() => setSub(false)}>
                         Subscribe
@@ -73,25 +78,82 @@ function WatchPage() {
                       </div>
                     )}
                   </div>
+
+                  <div className="  gap-1 hidden button-style   rounded-2xl w-fit">
+                    <ThumbsUp className=" text-white fill-white" />
+                    <p className=" flex">
+                      174K <span className=" mx-2   h-7">|</span>
+                    </p>
+                    <ThumbsDown />
+                  </div>
+                  <div className="button-style  hidden lg:hidden sm:flex md:flex  xl:flex gap-2 rounded-2xl">
+                    <Share className=" text-white " />
+                    <p>Share</p>
+                  </div>
+                  <div className="button-style  hidden sm:hidden md:flex xl:flex lg:hidden gap-2 rounded-2xl">
+                    <Download className=" text-white " />
+                    <p>Download</p>
+                  </div>
+                  <div className="button-style  hidden  xl:hidden  gap-2 rounded-2xl">
+                    <Clipboard className=" text-white " />
+                    <p>Cilp</p>
+                  </div>
+                </div>
+
+                {/* Like dislikse share download clip */}
+                <div className=" flex sm:hidden md:hidden">
+                  <RatingSec />
                 </div>
               </div>
-            </div>
-            {/* //suggested video section */}
-            <div>
-              <img
-                className=" w-full md:h-44  border border-gray-800  shadow-lg justify-center  mx-1 mb-1   "
-                src={
-                  item.snippet.thumbnails?.maxres?.url ||
-                  item.snippet.thumbnails.high.url
-                }
-                alt="thumbnails"
-              />
             </div>
           </div>
         ) : (
           ""
         );
       })}
+
+      <div className="">
+        {/* //suggested video section */}
+        {data.map((item) => {
+          return (
+            <div className="  mt-5 sm:mt-9 lg:mt-0   mx-6 flex-col">
+              {item.snippet.resourceId.videoId !== videoID ? (
+                <div className=" flex items-start  ">
+                  <img
+                    className=" w-44   border-2 border-gray-800  "
+                    src={
+                      item.snippet.thumbnails?.maxres?.url ||
+                      item.snippet.thumbnails.high.url
+                    }
+                    alt="thumbnails"
+                  />
+                  <div className=" ml-2 ">
+                    <div className=" flex items-start gap-3 max-w-[250px] sm:max-w-none">
+                      <p className=" text-suggested-title ">
+                        {item.snippet.title}
+                      </p>
+                    </div>
+
+                    <div className=" ">
+                      <div className=" flex gap-1 text-suggested-sub-title ">
+                        <p>{item.snippet.videoOwnerChannelTitle}</p>
+                        <Music width={12} />
+                      </div>
+
+                      <div className=" flex   gap-5 text-suggested-sub-title ">
+                        <p>216k views</p>
+                        <p>6 days ago</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

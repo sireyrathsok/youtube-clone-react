@@ -28,7 +28,10 @@ function Homepage() {
       {data.map((item) => {
         return (
           <>
-            <div className=" justify-end cursor-pointer sm:w-64 md:w-80 xl:w-72 sm:mx-3 md:mx-3   mx-5">
+            <div
+              key={item.snippet.id}
+              className=" justify-end cursor-pointer sm:w-64 md:w-80 xl:w-72 sm:mx-3 md:mx-3   mx-5"
+            >
               <Link
                 to={`/watch/${item.snippet.resourceId?.videoId}`}
                 state={{ videoData: data }}
@@ -37,7 +40,7 @@ function Homepage() {
                   className=" w-full md:h-44  border border-gray-800  shadow-lg justify-center  mx-1 mb-1   "
                   src={
                     item.snippet.thumbnails?.maxres?.url ||
-                    item.snippet.thumbnails.high.url
+                    item.snippet.thumbnails.medium.url
                   }
                   alt="thumbnails"
                 />
@@ -45,11 +48,6 @@ function Homepage() {
 
               <div className=" pl-3 mb-9 mt-2">
                 <div className=" flex items-start gap-3">
-                  {/* <User
-                    className=" bg-red-50 rounded-full mt-1  "
-                    width={30}
-                    height={30}
-                  /> */}
                   <p className=" text-main-title max-w-none">
                     {item.snippet.title}
                   </p>
@@ -71,9 +69,6 @@ function Homepage() {
           </>
         );
       })}
-
-      {/* <VedioFilter />
-      <VideoTV videoID="-nrAMmJZdC4" /> */}
     </div>
   );
 }
