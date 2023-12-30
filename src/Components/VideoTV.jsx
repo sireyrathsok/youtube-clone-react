@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 
 const VideoTV = ({ videoID }) => {
   return (
-    <div className=" flex flex-1 justify-center   rounded-xl shadow-sm ">
+    <div className=" flex flex-1 justify-center border-red-400   rounded-xl shadow-sm ">
       <ReactPlayer
         playing={true}
         controls={true}

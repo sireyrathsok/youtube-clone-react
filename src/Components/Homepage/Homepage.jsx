@@ -1,8 +1,8 @@
 import APIFetch from "../../api/APIFetch";
 import { useState, useEffect } from "react";
-import { Music } from "lucide-react";
+import { Music, User } from "lucide-react";
 import WatchPage from "../WatchPage";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import VideoTV from "../VideoTV";
 
 function Homepage() {
@@ -21,10 +21,6 @@ function Homepage() {
     fetchData();
   }, []);
 
-  const thumbnailOnClick = () => {
-    <Navigate to="/watch" />;
-  };
-
   return (
     <div className=" sm:flex sm:flex-wrap mt-10 justify-center   h-screen w-screen overflow-y-auto overflow-x-hidden scrollbar-hide gap-y-20">
       {console.log("data", data)}
@@ -33,27 +29,42 @@ function Homepage() {
         return (
           <>
             <div className=" justify-end cursor-pointer sm:w-64 md:w-80 xl:w-72 sm:mx-3 md:mx-3   mx-5">
-              <img
-                onClick={<VideoTV />}
-                className=" w-full md:h-44  border border-gray-800  shadow-lg justify-center  mx-1 mb-1   "
-                src={
-                  item.snippet.thumbnails?.maxres?.url ||
-                  item.snippet.thumbnails.high.url
-                }
-                alt="thumbnails"
-              />
+              <Link
+                to={`/watch/${item.snippet.resourceId?.videoId}`}
+                state={{ videoData: data }}
+              >
+                <img
+                  className=" w-full md:h-44  border border-gray-800  shadow-lg justify-center  mx-1 mb-1   "
+                  src={
+                    item.snippet.thumbnails?.maxres?.url ||
+                    item.snippet.thumbnails.high.url
+                  }
+                  alt="thumbnails"
+                />
+              </Link>
 
-              <div className=" pl-3">
-                <p className=" text-main-title">{item.snippet.title}</p>
-
-                <div className=" flex gap-1 text-sub-title">
-                  <p>{item.snippet.videoOwnerChannelTitle}</p>
-                  <Music width={12} />
+              <div className=" pl-3 mb-9 mt-2">
+                <div className=" flex items-start gap-3">
+                  {/* <User
+                    className=" bg-red-50 rounded-full mt-1  "
+                    width={30}
+                    height={30}
+                  /> */}
+                  <p className=" text-main-title max-w-none">
+                    {item.snippet.title}
+                  </p>
                 </div>
 
-                <div className=" flex  gap-5 text-sub-title">
-                  <p>216k views</p>
-                  <p>6 days ago</p>
+                <div>
+                  <div className=" flex gap-1 text-sub-title">
+                    <p>{item.snippet.videoOwnerChannelTitle}</p>
+                    <Music width={12} />
+                  </div>
+
+                  <div className=" flex   gap-5 text-sub-title">
+                    <p>216k views</p>
+                    <p>6 days ago</p>
+                  </div>
                 </div>
               </div>
             </div>

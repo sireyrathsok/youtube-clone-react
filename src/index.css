@@ -7,13 +7,16 @@
 
 @layer components{
     
-
+    .button-style{
+        @apply  text-white text-sm px-4 h-fit py-2 justify-center bg-gray-700 opacity-90 hover:bg-gray-800 transition-all 
+    }
     .filter-item {
         @apply text-white bg-gray-800 hover:bg-gray-900 transition-opacity cursor-pointer  px-3 py-1 rounded-lg
     } 
     .sidebar-item {
         @apply gap-9 my-1 px-4 py-2 pr-7 rounded-lg hover:bg-gray-800 w-full  hover:cursor-pointer  stroke-primary text-primary flex items-center
     }
+
 
     .hover-bg{
         @apply hover:bg-slate-500 cursor-pointer w-9 h-9 px-2  transition-colors

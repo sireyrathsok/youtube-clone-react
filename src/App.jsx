@@ -1,9 +1,7 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import VideoPage from "./Layouts/VideoPage";
 import Homepage from "./Components/Homepage/Homepage";
 import NavBar from "./Layouts/NavBar";
-import TestTest from "./Components/Homepage/TestTest";
-import Watch from "./Components/WatchPage";
+import WatchPage from "./Components/WatchPage";
 
 function App() {
   return (
@@ -13,7 +11,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/watch/:id" element={<VideoPage />} />
+          <Route path="/watch/:videoID" element={<WatchPage />} />
         </Routes>
       </div>
     </BrowserRouter>
