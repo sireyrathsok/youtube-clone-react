@@ -43,7 +43,7 @@ const VideoTV = ({ videoID }) => {
           controls={true}
           loop={true}
           light={true}
-          width={600}
+          width={500}
           height={350}
           url={`https://www.youtube.com/watch?v=${videoID}`}
         />

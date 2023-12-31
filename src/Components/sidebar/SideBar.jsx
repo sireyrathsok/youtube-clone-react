@@ -71,7 +71,7 @@ function SideBar({ setActive }) {
             <Clock />
             <p>Watch later</p>
           </div>
-          <div>
+          {/* <div>
             <div
               className={`sidebar-item ${seeMore && showless ? "hidden" : ""} `}
             >
@@ -98,7 +98,7 @@ function SideBar({ setActive }) {
                 <p>Show Less</p>
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

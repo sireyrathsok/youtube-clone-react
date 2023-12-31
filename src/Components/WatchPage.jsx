@@ -117,17 +117,16 @@ function WatchPage() {
         );
       })}
 
-      <div className=" bg-red-300">
+      <div className="">
         {/* //suggested video section */}
         {data.map((item) => {
           return (
-            <div className="mt-5 sm:mt-9 lg:mt-0 bg-green-300 mb-5  mx-6 flex-col">
+            <div className="mt-5 sm:mt-9 lg:mt-0 mb-5  h-fit  mx-6 flex-col">
               {item.snippet.resourceId.videoId !== videoID ? (
                 <div className=" flex items-start  ">
                   <Link to={`/watch/${item.snippet.resourceId?.videoId}`}>
                     <img
-                      width={50}
-                      className=" w-44 lg:w-56   border-2 border-gray-800  "
+                      className=" w-44 lg:max-w-xs    border-2 border-gray-800  "
                       src={
                         item.snippet.thumbnails?.maxres?.url ||
                         item.snippet.thumbnails.high.url
@@ -136,8 +135,8 @@ function WatchPage() {
                     />
                   </Link>
 
-                  <div className=" ml-2 ">
-                    <div className=" flex items-start gap-3 max-w-[250px] sm:max-w-none">
+                  <div className=" ml-2  ">
+                    <div className=" flex items-start gap-3 max-w-[250px] sm:max-w-none lg:max-w-[800px]">
                       <p className=" text-suggested-title ">
                         {item.snippet.title}
                       </p>

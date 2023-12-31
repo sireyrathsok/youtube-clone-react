@@ -2,6 +2,7 @@ import React from "react";
 import APIFetch from "../api/APIFetch";
 import { useState, useEffect } from "react";
 import { List } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ShowMore = () => {
   const [data, setData] = useState([]);
@@ -23,10 +24,12 @@ const ShowMore = () => {
   return (
     <div>
       {data.map((item) => (
-        <div key={item.id} className="  sidebar-item">
-          <List />
-          <p>{item.snippet.videoOwnerChannelTitle}</p>
-        </div>
+        <Link to={`/watch/${item.snippet.resourceId?.videoId}`}>
+          <div key={item.id} className="  sidebar-item">
+            <List />
+            <p>{item.snippet.videoOwnerChannelTitle}</p>
+          </div>{" "}
+        </Link>
       ))}
     </div>
   );
