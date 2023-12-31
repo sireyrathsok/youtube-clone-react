@@ -28,7 +28,7 @@ function Comments({ videoID }) {
     fetchComment();
   }, []);
   return (
-    <div className="  gap-10 mt-10">
+    <div className="  gap-10 mt-10 mb-24">
       <p className=" text-white text-lg">Comments</p>
       <p className=" bg-gray-900 w-full h-0.5 mt-2"></p>
       {comments.map((item) => {
