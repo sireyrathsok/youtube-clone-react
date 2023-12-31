@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const NavBar = ({ data }) => {
   const [active, setActive] = useState(false);
   return (
-    <div className="  flex flex-1 justify-between  items-center gap-5 pt-3 px-3 md:px-7  z-0 ">
+    <div className="  flex flex-1 justify-between  items-center gap-5 pt-3 px-3 md:px-7  z-0 mr-2 ">
       <div className=" ">
         <Link to="/">
           <div className={` flex items-center  ${active ? "hidden" : ""}`}>
