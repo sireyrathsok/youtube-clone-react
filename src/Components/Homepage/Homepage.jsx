@@ -22,7 +22,7 @@ function Homepage() {
   }, []);
 
   return (
-    <div className=" sm:flex sm:flex-wrap mt-10 justify-center   h-screen w-screen overflow-y-auto overflow-x-hidden scrollbar-hide gap-y-20">
+    <div className=" sm:flex sm:flex-wrap mt-10 pb-20  justify-center   h-screen w-screen overflow-y-auto overflow-x-hidden scrollbar-hide gap-y-20">
       {console.log("data", data)}
 
       {data.map((item) => {
