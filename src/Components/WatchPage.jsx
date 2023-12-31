@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import VideoTV from "./VideoTV";
 import APIFetch from "../api/APIFetch";
@@ -15,6 +15,7 @@ import {
   ThumbsUp,
   User,
 } from "lucide-react";
+import Comments from "./Comments";
 
 function WatchPage() {
   const { videoID } = useParams();
@@ -45,7 +46,7 @@ function WatchPage() {
               <p className="text-main-title sm:text-xl max-w-none  ">
                 {item.snippet.title}
               </p>
-              <div className=" mt-8   ">
+              <div className=" mt-5   ">
                 <div className=" flex gap-16 sm:gap-4 md:gap-6 lg:gap-4 items-center">
                   <div className=" flex gap-3 items-center">
                     <User
@@ -104,6 +105,10 @@ function WatchPage() {
                 <div className=" flex sm:hidden md:hidden">
                   <RatingSec />
                 </div>
+
+                <div className=" hidden lg:flex  ">
+                  <Comments videoID={videoID} />
+                </div>
               </div>
             </div>
           </div>
@@ -112,21 +117,25 @@ function WatchPage() {
         );
       })}
 
-      <div className="">
+      <div className=" bg-red-300">
         {/* //suggested video section */}
         {data.map((item) => {
           return (
-            <div className="  mt-5 sm:mt-9 lg:mt-0   mx-6 flex-col">
+            <div className="mt-5 sm:mt-9 lg:mt-0 bg-green-300 mb-5  mx-6 flex-col">
               {item.snippet.resourceId.videoId !== videoID ? (
                 <div className=" flex items-start  ">
-                  <img
-                    className=" w-44   border-2 border-gray-800  "
-                    src={
-                      item.snippet.thumbnails?.maxres?.url ||
-                      item.snippet.thumbnails.high.url
-                    }
-                    alt="thumbnails"
-                  />
+                  <Link to={`/watch/${item.snippet.resourceId?.videoId}`}>
+                    <img
+                      width={50}
+                      className=" w-44 lg:w-56   border-2 border-gray-800  "
+                      src={
+                        item.snippet.thumbnails?.maxres?.url ||
+                        item.snippet.thumbnails.high.url
+                      }
+                      alt="thumbnails"
+                    />
+                  </Link>
+
                   <div className=" ml-2 ">
                     <div className=" flex items-start gap-3 max-w-[250px] sm:max-w-none">
                       <p className=" text-suggested-title ">

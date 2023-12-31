@@ -40,7 +40,7 @@ function Homepage() {
                   className=" w-full md:h-44  border border-gray-800  shadow-lg justify-center  mx-1 mb-1   "
                   src={
                     item.snippet.thumbnails?.maxres?.url ||
-                    item.snippet.thumbnails.medium.url
+                    item.snippet.thumbnails.high.url
                   }
                   alt="thumbnails"
                 />
