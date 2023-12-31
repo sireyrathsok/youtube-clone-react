@@ -95,7 +95,7 @@ function WatchPage() {
                     <Download className=" text-white " />
                     <p>Download</p>
                   </div>
-                  <div className="button-style  hidden  xl:hidden  gap-2 rounded-2xl">
+                  <div className="button-style  hidden xs:hidden  xl:hidden  gap-2 rounded-2xl">
                     <Clipboard className=" text-white " />
                     <p>Cilp</p>
                   </div>

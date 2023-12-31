@@ -4,7 +4,7 @@ import ReactPlayer from "react-player";
 const VideoTV = ({ videoID }) => {
   return (
     <div>
-      <div className=" lg:hidden md:hidden xl:hidden sm:hidden   flex-1 justify-center border-red-400   rounded-xl shadow-sm ">
+      <div className=" lg:hidden xs:hidden md:hidden xl:hidden sm:hidden   flex-1 justify-center border-red-400   rounded-xl shadow-sm ">
         <ReactPlayer
           playing={true}
           controls={true}
@@ -15,6 +15,7 @@ const VideoTV = ({ videoID }) => {
           url={`https://www.youtube.com/watch?v=${videoID}`}
         />
       </div>
+
       <div className=" lg:hidden md:hidden xl:hidden sm:flex hidden   flex-1 justify-center border-red-400   rounded-xl shadow-sm ">
         <ReactPlayer
           playing={true}

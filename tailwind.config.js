@@ -20,6 +20,9 @@ export default {
       height: {
         0.2: "1px",
       },
+      screens: {
+        xs: "550px",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
