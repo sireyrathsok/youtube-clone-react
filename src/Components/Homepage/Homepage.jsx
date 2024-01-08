@@ -31,7 +31,7 @@ function Homepage() {
         return (
           <div
             key={item.snippet.id}
-            className=" justify-end cursor-pointer bg-red-500 sm:w-64 md:w-80 xl:w-72 sm:mx-3 md:mx-3   mx-5"
+            className=" justify-end cursor-pointer sm:w-64 md:w-80 xl:w-72 sm:mx-3 md:mx-3   mx-5"
           >
             <Link
               to={`/watch/${item.snippet.resourceId?.videoId}`}
