@@ -6,7 +6,7 @@ const RatingSec = () => {
     <div className="  mt-6 flex gap-1 items-center justify-center ">
       <div className=" flex gap-1 button-style  rounded-2xl w-fit">
         <ThumbsUp className=" text-white fill-white" />
-        <p>
+        <p className=" ">
           174K <span className=" mx-1  h-7">|</span>
         </p>
         <ThumbsDown />
@@ -21,7 +21,7 @@ const RatingSec = () => {
         <Download className=" text-white " />
         <p>Download</p>
       </div>
-      <div className="button-style flex gap-2 rounded-2xl">
+      <div className="button-style xs:hidden flex gap-2 rounded-2xl">
         <Clipboard className=" text-white " />
         <p>Cilp</p>
       </div>

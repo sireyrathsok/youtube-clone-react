@@ -37,10 +37,14 @@ function WatchPage() {
   }, []);
 
   return (
-    <div className=" lg:flex xl:mx-24   h-screen overflow-auto scrollbar-hide mt-7 pb-20 ">
+    <div className=" lg:flex x xl:mx-24   h-screen overflow-auto scrollbar-hide mt-7 pb-20 ">
+      {console.log("parammmmmmmmmmmmmmm", videoID)}
       {data.map((item) => {
         return item.snippet.resourceId.videoId === videoID ? (
-          <div className=" px-5 w-fit   " key={item.snippet.id}>
+          <div
+            className=" px-5 lg:max-w-2xl xl:max-w-3xl    "
+            key={item.snippet.id}
+          >
             <VideoTV videoID={item.snippet.resourceId.videoId} />
             <div className=" mt-4">
               <p className="text-main-title sm:text-xl max-w-none  ">
@@ -106,6 +110,7 @@ function WatchPage() {
                   <RatingSec />
                 </div>
 
+                {/* comments section -----------------------*/}
                 <div className=" hidden lg:flex  ">
                   <Comments videoID={videoID} />
                 </div>
@@ -117,11 +122,11 @@ function WatchPage() {
         );
       })}
 
-      <div className="">
+      <div className=" ">
         {/* //suggested video section */}
         {data.map((item) => {
           return (
-            <div className="mt-5 sm:mt-9 lg:mt-0 mb-5  h-fit  mx-6 flex-col">
+            <div className="mt-5 sm:mt-9 lg:mt-0 mb-5  h-fit   mx-6 flex-col">
               {item.snippet.resourceId.videoId !== videoID ? (
                 <div className=" flex items-start  ">
                   <Link to={`/watch/${item.snippet.resourceId?.videoId}`}>

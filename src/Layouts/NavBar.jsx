@@ -4,6 +4,7 @@ import Logo from "../Components/Logo";
 import { useState } from "react";
 import SideBar from "../Components/sidebar/SideBar";
 import { Link } from "react-router-dom";
+import InpSearch from "../Components/InpSearch";
 
 const NavBar = ({ data }) => {
   const [active, setActive] = useState(false);
@@ -26,11 +27,15 @@ const NavBar = ({ data }) => {
       </div>
 
       <div
-        className={`flex grow items-center justify-end sm:justify-center ${
+        className={`flex   items-center justify-end sm:justify-center ${
           active ? " ml-44" : ""
         }`}
       >
-        <input
+        <div className=" justify-center ">
+          <InpSearch className=" " />
+        </div>
+
+        {/* <input
           placeholder="Search "
           className=" hidden sm:flex grow pl-4 max-w-lg border border-slate-400 bg-primaryBgColor rounded-tl-xl rounded-bl-xl h-8"
         />
@@ -39,7 +44,7 @@ const NavBar = ({ data }) => {
             setActive ? setActive(false) : "";
           }}
           className=" grow-0 hover:cursor-pointer  stroke-primary sm:bg-secondBgColor sm:pointer-events-none sm:h-8 sm:rounded-tr-xl sm:rounded-br-xl   h-9 w-9 px-2 hover:px-2 hover:rounded-full hover:bg-slate-500 "
-        />
+        /> */}
         <Mic className=" sm:ml-4 stroke-white sm:bg-secondBgColor hover-bg w-9 h-9 px-2 rounded-full" />
       </div>
 

@@ -4,19 +4,19 @@ import ReactPlayer from "react-player";
 const VideoTV = ({ videoID }) => {
   return (
     <div>
-      <div className=" lg:hidden xs:hidden md:hidden xl:hidden sm:hidden   flex-1 justify-center border-red-400   rounded-xl shadow-sm ">
+      <div className=" border-2 border-gray-900  lg:hidden  md:hidden xl:hidden sm:hidden flex   flex-1 justify-center bor   rounded-xl shadow-sm ">
         <ReactPlayer
           playing={true}
           controls={true}
           loop={true}
           light={true}
-          width={460}
+          width={500}
           height={260}
           url={`https://www.youtube.com/watch?v=${videoID}`}
         />
       </div>
 
-      <div className=" lg:hidden md:hidden xl:hidden sm:flex hidden   flex-1 justify-center border-red-400   rounded-xl shadow-sm ">
+      <div className=" border-2 border-gray-900  lg:hidden md:hidden xl:hidden sm:flex hidden   flex-1 justify-center bor   rounded-xl shadow-sm ">
         <ReactPlayer
           playing={true}
           controls={true}
@@ -27,7 +27,7 @@ const VideoTV = ({ videoID }) => {
           url={`https://www.youtube.com/watch?v=${videoID}`}
         />
       </div>
-      <div className=" hidden md:flex  lg:hidden xl:hidden flex-1 justify-center border-red-400   rounded-xl shadow-sm ">
+      <div className=" border-2 border-gray-900  hidden md:flex  lg:hidden xl:hidden flex-1 justify-center bor   rounded-xl shadow-sm ">
         <ReactPlayer
           playing={true}
           controls={true}
@@ -38,19 +38,19 @@ const VideoTV = ({ videoID }) => {
           url={`https://www.youtube.com/watch?v=${videoID}`}
         />
       </div>
-      <div className=" hidden lg:flex xl:hidden  justify-center border-red-400   rounded-xl shadow-sm ">
+      <div className=" border-2 border-gray-900  hidden lg:flex xl:hidden  w-fit  bor   rounded-xl shadow-sm ">
         <ReactPlayer
           playing={true}
           controls={true}
           loop={true}
           light={true}
-          width={500}
+          width={600}
           height={350}
           url={`https://www.youtube.com/watch?v=${videoID}`}
         />
       </div>
 
-      <div className=" hidden xl:flex  justify-center border-red-400   rounded-xl shadow-sm ">
+      <div className=" border-2 border-gray-900  hidden xl:flex  justify-center bor   rounded-xl shadow-sm ">
         <ReactPlayer
           playing={true}
           controls={true}

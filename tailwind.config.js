@@ -21,7 +21,7 @@ export default {
         0.2: "1px",
       },
       screens: {
-        xs: "550px",
+        xs: "320px",
       },
     },
   },
