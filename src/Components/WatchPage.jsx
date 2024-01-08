@@ -51,7 +51,7 @@ function WatchPage() {
                 {item.snippet.title}
               </p>
               <div className=" mt-5   ">
-                <div className=" flex gap-16 sm:gap-4 md:gap-6 xs:gap-2 lg:gap-4 items-center">
+                <div className=" flex gap-16 sm:gap-4 md:gap-6  lg:gap-4 items-center">
                   <div className=" flex gap-3 items-center">
                     <User
                       width={40}
@@ -131,7 +131,7 @@ function WatchPage() {
                 <div className=" flex items-start  ">
                   <Link to={`/watch/${item.snippet.resourceId?.videoId}`}>
                     <img
-                      className=" w-44 lg:max-w-xs    border-2 border-gray-800  "
+                      className=" w-32 xs:w-44 lg:max-w-xs     border-2 border-gray-800  "
                       src={
                         item.snippet.thumbnails?.maxres?.url ||
                         item.snippet.thumbnails.high.url

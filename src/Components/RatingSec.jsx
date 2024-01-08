@@ -21,7 +21,7 @@ const RatingSec = () => {
         <Download className=" text-white " />
         <p>Download</p>
       </div>
-      <div className="button-style xs:hidden flex gap-2 rounded-2xl">
+      <div className="button-style hidden xs:flex gap-2 rounded-2xl">
         <Clipboard className=" text-white " />
         <p>Cilp</p>
       </div>

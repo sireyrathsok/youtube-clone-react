@@ -51,7 +51,7 @@ const NavBar = ({ data }) => {
       <div className=" flex items-center gap-2 sm:gap-3">
         <Video className=" stroke-white hover-bg rounded-full " />
         <Bell className=" stroke-white  rounded-full px-2 hover-bg " />
-        <User className=" stroke-white bgg bg-gray-600 h-9 w-9 rounded-full px-2 xs:mr-2" />
+        <User className=" stroke-white bgg bg-gray-600 h-9 w-9 rounded-full px-2 xs:mr-0 mr-2" />
       </div>
     </div>
   );
