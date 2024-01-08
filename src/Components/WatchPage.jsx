@@ -51,7 +51,7 @@ function WatchPage() {
                 {item.snippet.title}
               </p>
               <div className=" mt-5   ">
-                <div className=" flex gap-16 sm:gap-4 md:gap-6 lg:gap-4 items-center">
+                <div className=" flex gap-16 sm:gap-4 md:gap-6 xs:gap-2 lg:gap-4 items-center">
                   <div className=" flex gap-3 items-center">
                     <User
                       width={40}
@@ -62,12 +62,12 @@ function WatchPage() {
                       <p className="text-main-title">
                         {item.snippet.videoOwnerChannelTitle}
                       </p>
-                      <p className="text-sub-title ">
+                      <p className="text-sub-title xs:text-xs ">
                         93k <span>subscribers</span>
                       </p>
                     </div>
                   </div>
-                  <div className="button-style bg-button flex gap-2 lg:ml-9  rounded-lg">
+                  <div className="button-style bg-button flex gap-2 lg:ml-9   rounded-lg">
                     {sub ? (
                       <button className=" px-2 " onClick={() => setSub(false)}>
                         Subscribe
