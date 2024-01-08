@@ -131,7 +131,7 @@ function WatchPage() {
                 <div className=" flex items-start  ">
                   <Link to={`/watch/${item.snippet.resourceId?.videoId}`}>
                     <img
-                      className=" max-w-xs xs:w-44 lg:max-w-xs     border-2 border-gray-800  "
+                      className=" w-24 xs:w-44 lg:max-w-xs     border-2 border-gray-800  "
                       src={
                         item.snippet.thumbnails?.maxres?.url ||
                         item.snippet.thumbnails.high.url
