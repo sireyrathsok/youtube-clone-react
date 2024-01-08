@@ -9,7 +9,7 @@ import InpSearch from "../Components/InpSearch";
 const NavBar = ({ data }) => {
   const [active, setActive] = useState(false);
   return (
-    <div className="  flex flex-1 justify-between  items-center gap-5 pt-3 px-3 md:px-7  z-0 mr-2 ">
+    <div className="  flex flex-1 justify-between  items-center gap-5 xs:gap-1 pt-3 px-3 md:px-7  z-0   ">
       <div className=" ">
         <Link to="/">
           <div className={` flex items-center  ${active ? "hidden" : ""}`}>
@@ -48,10 +48,10 @@ const NavBar = ({ data }) => {
         <Mic className=" sm:ml-4 stroke-white sm:bg-secondBgColor hover-bg w-9 h-9 px-2 rounded-full" />
       </div>
 
-      <div className=" flex items-center gap-2 sm:gap-3">
+      <div className=" flex items-center gap-2 xxs:gap-1 sm:gap-3">
         <Video className=" stroke-white hover-bg rounded-full " />
         <Bell className=" stroke-white  rounded-full px-2 hover-bg " />
-        <User className=" stroke-white bgg bg-gray-600 h-9 w-9 rounded-full px-2 xs:mr-0 mr-2" />
+        <User className=" stroke-white  bg-red-400  h-9 w-9 rounded-full px-2 mr-2   " />
       </div>
     </div>
   );

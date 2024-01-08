@@ -50,8 +50,8 @@ function WatchPage() {
               <p className="text-main-title sm:text-xl max-w-none  ">
                 {item.snippet.title}
               </p>
-              <div className=" mt-5   ">
-                <div className=" flex gap-16 sm:gap-4 md:gap-6  lg:gap-4 items-center">
+              <div className=" mt-5  ">
+                <div className=" flex  gap-6 xxs:justify-between md:justify-normal md:gap-20  lg:gap-4 items-center">
                   <div className=" flex gap-3 items-center">
                     <User
                       width={40}
@@ -67,47 +67,48 @@ function WatchPage() {
                       </p>
                     </div>
                   </div>
-                  <div className="button-style bg-button flex gap-2 lg:ml-9   rounded-lg">
-                    {sub ? (
-                      <button className=" px-2 " onClick={() => setSub(false)}>
-                        Subscribe
-                      </button>
-                    ) : (
-                      <div
-                        className=" flex items-center gap-2  "
-                        onClick={() => setSub(!false)}
-                      >
-                        <Bell width={20} />
-                        <p>Subscribed</p>
-                        <ArrowDown width={20} />
-                      </div>
-                    )}
-                  </div>
+                  <div className=" flex gap-3 ">
+                    <div className="button-style bg-button flex gap-2 lg:ml-9   rounded-lg">
+                      {sub ? (
+                        <button
+                          className=" px-2 "
+                          onClick={() => setSub(false)}
+                        >
+                          Subscribe
+                        </button>
+                      ) : (
+                        <div
+                          className=" flex items-center gap-2  "
+                          onClick={() => setSub(!false)}
+                        >
+                          <Bell width={20} />
+                          <p>Subscribed</p>
+                          <ArrowDown width={20} />
+                        </div>
+                      )}
+                    </div>
 
-                  <div className="  gap-1 hidden button-style   rounded-2xl w-fit">
-                    <ThumbsUp className=" text-white fill-white" />
-                    <p className=" flex">
-                      174K <span className=" mx-2   h-7">|</span>
-                    </p>
-                    <ThumbsDown />
+                    <div className="  gap-1 hidden button-style   rounded-2xl w-fit">
+                      <ThumbsUp className=" text-white fill-white" />
+                      <p className=" flex">
+                        174K <span className=" mx-2   h-7">|</span>
+                      </p>
+                      <ThumbsDown />
+                    </div>
+                    <div className="button-style xs:hidden xxs:hidden lg:hidden sm:flex md:flex  xl:flex gap-2 rounded-2xl">
+                      <Share className=" text-white " />
+                      <p>Share</p>
+                    </div>
+                    <div className="button-style  hidden sm:flex md:flex xl:flex lg:flex gap-2 rounded-2xl">
+                      <Download className=" text-white " />
+                      <p>Download</p>
+                    </div>
+                    <div className="button-style  hidden xs:hidden md:flex  xl:flex  gap-2 rounded-2xl">
+                      <Clipboard className=" text-white " />
+                      <p>Cilp</p>
+                    </div>
                   </div>
-                  <div className="button-style  hidden lg:hidden sm:flex md:flex  xl:flex gap-2 rounded-2xl">
-                    <Share className=" text-white " />
-                    <p>Share</p>
-                  </div>
-                  <div className="button-style  hidden sm:hidden md:flex xl:flex lg:hidden gap-2 rounded-2xl">
-                    <Download className=" text-white " />
-                    <p>Download</p>
-                  </div>
-                  <div className="button-style  hidden xs:hidden  xl:hidden  gap-2 rounded-2xl">
-                    <Clipboard className=" text-white " />
-                    <p>Cilp</p>
-                  </div>
-                </div>
-
-                {/* Like dislikse share download clip */}
-                <div className=" flex sm:hidden md:hidden">
-                  <RatingSec />
+                  {/* Like dislikse share download clip */}
                 </div>
 
                 {/* comments section -----------------------*/}
@@ -131,7 +132,7 @@ function WatchPage() {
                 <div className=" flex items-start  ">
                   <Link to={`/watch/${item.snippet.resourceId?.videoId}`}>
                     <img
-                      className=" w-24 xs:w-44 lg:max-w-xs     border-2 border-gray-800  "
+                      className="  xxs:max-w-[170px] xs:w-44 lg:max-w-xs     border-2 border-gray-800  "
                       src={
                         item.snippet.thumbnails?.maxres?.url ||
                         item.snippet.thumbnails.high.url
@@ -141,7 +142,7 @@ function WatchPage() {
                   </Link>
 
                   <div className=" ml-2  ">
-                    <div className=" flex items-start gap-3 max-w-[250px] sm:max-w-none lg:max-w-[800px]">
+                    <div className=" flex items-start  gap-3 max-w-[250px] xxs:max-w-[250px]   sm:max-w-none lg:max-w-[800px]">
                       <p className=" text-suggested-title ">
                         {item.snippet.title}
                       </p>

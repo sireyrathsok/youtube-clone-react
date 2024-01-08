@@ -8,7 +8,7 @@
 @layer components{
     
     .button-style{
-        @apply  text-white text-sm px-4  h-fit py-2 justify-center bg-gray-700 opacity-90 hover:bg-gray-800 transition-all 
+        @apply  text-white xs:text-sm xxs:text-xs  px-4  h-fit py-2 justify-center items-center bg-gray-700 opacity-90 hover:bg-gray-800 transition-all 
     }
     .filter-item {
         @apply text-white bg-gray-800 hover:bg-gray-900 transition-opacity cursor-pointer  px-3 py-1 rounded-lg
@@ -22,19 +22,18 @@
         @apply hover:bg-slate-500 cursor-pointer w-9 h-9 px-2  transition-colors
     }
     .text-main-title {
-        @apply text-primary font-semibold text-lg sm:text-sm max-w-[280px]
+        @apply text-primary font-semibold xs:text-lg xxs:text-xs sm:text-sm max-w-[280px]
     }
 
     .text-recomment-title {
-        @apply text-primary font-semibold text-lg
-    }
+        @apply text-primary font-semibold text-lg     }
 
     .text-sub-title {
         @apply text-secondary  
     }
 
     .text-suggested-title {
-        @apply text-white text-sm font-semibold
+        @apply text-white xs:text-sm xxs:text-[13px] font-semibold
     }
 
     .text-suggested-sub-title {
